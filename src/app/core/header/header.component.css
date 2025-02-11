@@ -1,0 +1,13 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+a {
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
+}

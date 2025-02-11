@@ -1,1 +1,83 @@
-/* You can add global styles to this file, and also import other style files */
+
+/*COLORS*/
+:root{
+    --first-color: #3d45b9;
+    --second-color: #60cbe3;
+}
+/*FONT*/
+:root{
+    --body-font: 'Poppins', sans-serif;
+    --big-font-size: 2rem;
+    --h2-font-size:1.25rem;
+    --normal-font-size:0.938rem;
+}
+@media screen and (min-wifth: 768px) {
+    :root{
+        --big-font-size: 3.5rem;
+        --h2-font-size: 2rem;
+        --normal-font-size: 1rem;
+    }
+}
+
+
+/*BODY*/
+body{
+    font-family: var(--body-font);
+    font-size: var(--body-font);
+    color: var(--second-color);
+}
+
+/*Title*/
+.section-title{
+    position: relative;
+    font-size: var(--h2-fonts-size);
+    color: #3d45b9;
+    margin-bottom: 20px;
+}
+
+/*links*/
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #60cbe3, #3d45b9);
+    transition: width 0.3s ease-in-out;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*section*/
+.section-title{
+    position: relative;
+    font-size: var(--h2-font-size);
+    color: var(--first-color);
+    
+}
+
+.section-title::after{
+    position: absolute;
+    content: "";
+    width: 64px;
+    height: 0.18rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 2rem;
+    background-color: var(--first-color);    
+}
+
+.section{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
