@@ -1,0 +1,69 @@
+.gallery .image-wrapper {
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.gallery img {
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.expanded-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.expanded-container.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.expanded-image {
+    max-width: 80%;
+    max-height: 80vh;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.expanded-image:hover {
+    transform: scale(1.05);
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.6);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+.nav-button.left {
+    left: 20px;
+}
+
+.nav-button.right {
+    right: 20px;
+}

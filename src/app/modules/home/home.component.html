@@ -1,18 +1,166 @@
-<section class="container p-5">
+<section class="container mt-5 animated about">
     <div class="row align-items-center">
         <div class="col-md-6 mb-4 mb-md-0 text-center">
-            <img src="assets/images/Foto.png" alt="Profile Image" class="img-fluid rounded-circle animated">
+            <img src="assets/images/Foto.png" alt="Profile Image" class="img-fluid rounded-circle profile-image">
         </div>
-
-        <div class="col-md-6 animated">
-            <p class="text-muted mb-1 text-center">Hello, I'm</p>
-            <h1 class="fw-bold mb-1 text-center">Jesús Alejandro Hernandez Alonso</h1>
-            <p class="text-secondary fs-5 mb-4 text-center">Full-stack Developer</p>
-            <p class="text-secondary text-justify">I am a versatile Full Stack Developer with extensive experience in building web and mobile applications. My skill set includes proficiency in programming languages such as TypeScript, JavaScript, Dart, and SQL, as well as expertise in frameworks like Angular, Flutter, Laravel, and Node.js. I specialize in creating responsive, user-centric designs utilizing modern tools like Tailwind CSS, Bootstrap, and Figma.</p>
-            <div class="d-flex justify-content-center gap-3 mb-3">
-                <button class="btn btn-outline-dark px-4 animated"><i class="icon bi bi-download"></i>Download CV</button>
-                <button class="btn btn-dark px-4 animated"><i class="icon bi bi-envelope"></i>Contact Info</button>
+        <div class="col-md-6">
+            <div class="info-container">
+                <p class="text-muted mb-1 text-center">Hello, I'm</p>
+                <h1 class="fw-bold mb-1 text-center">Jesús Alejandro Hernandez Alonso</h1>
+                <p class="text-secondary fs-5 mb-4 text-center">Full-stack Developer</p>
+                <p class="text-secondary text-justify">I am a versatile Full Stack Developer with extensive experience
+                    in building web and mobile applications. My skill set includes proficiency in programming languages
+                    such as TypeScript, JavaScript, Dart, and SQL, as well as expertise in frameworks like Angular,
+                    Flutter, Laravel, and Node.js. I specialize in creating responsive, user-centric designs utilizing
+                    modern tools like Tailwind CSS, Bootstrap, and Figma.</p>
+                <div class="d-flex justify-content-center gap-3 mb-3">
+                    <button class="btn btn-outline-dark px-4"><i class="icon bi bi-download p-2"></i>Download
+                        CV</button>
+                    <button class="btn btn-dark px-4"><i class="icon bi bi-envelope p-2"></i>Contact Info</button>
+                </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section>
+    <div class="intro-section mt-4">
+        <div class="container text-center">
+            <h2 class="display-4 fw-bold mb-3">Frameworks</h2>
+            <p class="lead text-muted mx-auto mb-4">
+                Technologies and tools I have mastered to deliver efficient and scalable solutions.
+            </p>
+        </div>
+    </div>
+
+    <div id="carouselFrameworkIndicators" class="carousel slide" data-bs-ride="carousel"
+        data-bs-interval="2000">
+        <div class="carousel-indicators">
+            <button *ngFor="let skill of frameworks; let i = index" type="button"
+                data-bs-target="#carouselFrameworkIndicators" [attr.data-bs-slide-to]="i" class="btn btn-primary"
+                [class.active]="i === 0" [attr.aria-current]="i === 0 ? 'true' : null"
+                [attr.aria-label]="'Slide ' + (i + 1)"></button>
+        </div>
+        <div class="carousel-inner">
+            <div *ngFor="let skill of frameworks; let i = index" class="carousel-item" [class.active]="i === 0">
+                <app-card [dataSkill]="skill"></app-card>
+            </div>
+        </div>
+        <button class="carousel-control-prev btn-carousel" type="button" data-bs-target="#carouselFrameworkIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next btn-carousel" type="button" data-bs-target="#carouselFrameworkIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section>
+    <div class="intro-section">
+        <div class="container text-center">
+            <h2 class="display-4 fw-bold mb-3">Programming Languages</h2>
+            <p class="lead text-muted mx-auto mb-4">
+                Languages I am proficient in, which serve as the foundation for building robust and innovative
+                solutions.
+            </p>
+        </div>
+    </div>
+
+    <div id="carouselLanguageIndicators" class="carousel slide" data-bs-ride="carousel"
+        data-bs-interval="2000">
+        <div class="carousel-indicators">
+            <button *ngFor="let skill of languages; let i = index" type="button"
+                data-bs-target="#carouselLanguageIndicators" [attr.data-bs-slide-to]="i" class="btn btn-primary"
+                [class.active]="i === 0" [attr.aria-current]="i === 0 ? 'true' : null"
+                [attr.aria-label]="'Slide ' + (i + 1)"></button>
+        </div>
+        <div class="carousel-inner">
+            <div *ngFor="let skill of languages; let i = index" class="carousel-item" [class.active]="i === 0">
+                <app-card [dataSkill]="skill"></app-card>
+            </div>
+        </div>
+        <button class="carousel-control-prev btn-carousel" type="button" data-bs-target="#carouselLanguageIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next btn-carousel" type="button" data-bs-target="#carouselLanguageIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section>
+    <div class="intro-section">
+        <div class="container text-center">
+            <h2 class="display-4 fw-bold mb-3">Domains</h2>
+            <p class="lead text-muted mx-auto mb-4">
+                Specific domains and fields where I have gained expertise and delivered impactful results.
+            </p>
+        </div>
+    </div>
+
+    <div id="carouselAreaIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-indicators">
+            <button *ngFor="let skill of areas; let i = index" type="button" data-bs-target="#carouselAreaIndicators"
+                [attr.data-bs-slide-to]="i" class="btn btn-primary" [class.active]="i === 0"
+                [attr.aria-current]="i === 0 ? 'true' : null" [attr.aria-label]="'Slide ' + (i + 1)"></button>
+        </div>
+        <div class="carousel-inner">
+            <div *ngFor="let skill of areas; let i = index" class="carousel-item" [class.active]="i === 0">
+                <app-card [dataSkill]="skill"></app-card>
+            </div>
+        </div>
+        <button class="carousel-control-prev btn-carousel" type="button" data-bs-target="#carouselAreaIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next btn-carousel" type="button" data-bs-target="#carouselAreaIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section>
+
+    <div class="intro-section">
+        <div class="container text-center">
+            <h2 class="display-4 fw-bold mb-3">Tools</h2>
+            <p class="lead text-muted mx-auto mb-4">
+                Tools and software that I have mastered to streamline development and improve productivity.
+            </p>
+        </div>
+    </div>
+
+    <div id="carouselToolIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-indicators">
+            <button *ngFor="let skill of tools; let i = index" type="button" data-bs-target="#carouselToolIndicators"
+                [attr.data-bs-slide-to]="i" class="btn btn-primary" [class.active]="i === 0"
+                [attr.aria-current]="i === 0 ? 'true' : null" [attr.aria-label]="'Slide ' + (i + 1)"></button>
+        </div>
+        <div class="carousel-inner">
+            <div *ngFor="let skill of tools; let i = index" class="carousel-item" [class.active]="i === 0">
+                <app-card [dataSkill]="skill"></app-card>
+            </div>
+        </div>
+        <button class="carousel-control-prev btn-carousel" type="button" data-bs-target="#carouselToolIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next btn-carousel" type="button" data-bs-target="#carouselToolIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </section>

@@ -1,8 +1,32 @@
-<div class="card">
-    <img [src]="image" class="card-img-top" alt="{{ title }}">
-    <div class="card-body">
-        <h5 class="card-title">{{ title }}</h5>
-        <p class="card-text">{{ description }}</p>
-        <ng-content></ng-content>
+<div class="d-flex justify-content-center align-items-center p-5">
+  <div class="card">
+    <div class="content">
+      <div class="image-wrapper">
+        <img
+          *ngIf="dataSkill?.image || dataExperience?.image || (dataProject?.images && dataProject.images.length > 0)"
+          [src]="dataSkill?.image || dataExperience?.image || (dataProject?.images?.[0] || '')"
+          alt="Imagen"
+          class="card-image"
+        />
+      </div>
+
+      <h3>{{ dataSkill?.name || dataProject?.name || dataExperience?.name }}</h3>
+
+      <!-- Para Project -->
+      <p *ngIf="dataProject?.description">{{ dataProject.description }}</p>
+      <p *ngIf="dataProject?.status">Estado: {{ dataProject.status }}</p>
+
+      <!-- Para Experience -->
+
+      <p *ngIf="dataExperience?.startDate">
+        {{ formatDate(dataExperience.startDate) }} -
+        {{ formatDate(dataExperience.endDate) }}
+      </p>
+
+      <!-- Botón para Project -->
+      <a *ngIf="dataProject" [routerLink]="['/projects', dataProject.id]">Leer Más</a>
+      <a *ngIf="dataExperience" [routerLink]="['/experience', dataExperience.id]">Leer Más</a>
+
     </div>
+  </div>
 </div>

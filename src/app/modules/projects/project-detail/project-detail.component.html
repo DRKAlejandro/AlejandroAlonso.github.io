@@ -1,1 +1,31 @@
-<p>project-detail works!</p>
+<div *ngIf="project" class="container p-3 mt-5">
+    <div class="card shadow-sm border-0 rounded-lg">
+        <div class="card-body p-4">
+            <h1 class="card-title text-primary fw-bold">{{ project?.name }}</h1>
+            <p class="card-text text-muted">{{ project?.description }}</p>
+            <p class="card-text">
+                <strong>Status:</strong>
+                <span class="badge bg-success">{{ project?.status }}</span>
+            </p>
+
+            <div *ngIf="hasImages()" class="gallery mt-4">
+                <div class="row g-3">
+                    <div *ngFor="let image of project?.images; let i = index" class="col-md-4">
+                        <div class="image-wrapper" (click)="expandImage(i)">
+                            <img [src]="image" alt="{{ project?.name }}"
+                                class="img-fluid rounded shadow-sm fixed-size" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p *ngIf="!project" class="text-center text-muted mt-5">Project not found.</p>
+
+<div *ngIf="expandedImageIndex !== null && project?.images"
+    [ngClass]="{'expanded-container': true, 'show': isImageVisible}" (click)="closeImage()">
+    <button class="nav-button left" (click)="prevImage(); $event.stopPropagation()">&#10094;</button>
+    <img [src]="project?.images?.[expandedImageIndex]" class="expanded-image" alt="Expanded Image" />
+    <button class="nav-button right" (click)="nextImage(); $event.stopPropagation()">&#10095;</button>
+</div>

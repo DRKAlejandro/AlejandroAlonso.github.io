@@ -1,20 +1,81 @@
 :host {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .layout-container {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-  
-  .content-container {
-    flex-grow: 1; 
-  }
-  
-  app-footer {
-    margin-top: auto; 
-  }
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.content-container {
+  flex-grow: 1;
+}
+
+app-footer {
+  margin-top: auto;
+}
+
+
+.btn-carousel {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #d5dee8;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-control-prev {
+  left: 40px;
+}
+
+.carousel-control-next {
+  right: 40px;
+}
+
+.btn-carousel:hover {
+  background-color: #c6c8ca;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+  width: 20px;
+  height: 20px;
+}
+
+.carousel-indicators .btn {
+  width: 12px;
+  height: 12px;
+  background-color: #d5dee8;
+  border: none;
+  margin: 5px;
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-indicators .btn.active {
+  opacity: 1;
+  background-color: #c6c8ca;
+}
+
+
+.carousel-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}

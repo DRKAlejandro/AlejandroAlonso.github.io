@@ -1,1 +1,40 @@
-<p>project-list works!</p>
+<div id="projects-introduction" class="py-5">
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-8 col-md-10 col-sm-12">
+            <h2 class="display-4 fw-bold mb-4">Projects I've Worked On</h2>
+            <p class="lead text-muted mb-4">
+                In this section, you will find the projects I have worked on throughout my academic and professional career.
+                Each project demonstrates my skills, the challenges I overcame, and the tools I used to deliver successful results.
+            </p>
+            <p class="text-muted">
+                I aim to showcase my growth, dedication, and the practical experience I have gained over the years.
+                The projects include a wide range of industries and technologies, illustrating my ability to adapt to diverse environments.
+            </p>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div id="carouselProjectIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-indicators">
+            <button *ngFor="let project of projects; let i = index" type="button" data-bs-target="#carouselProjectIndicators"
+                [attr.data-bs-slide-to]="i" class="btn btn-primary" [class.active]="i === 0"
+                [attr.aria-current]="i === 0 ? 'true' : null" [attr.aria-label]="'Slide ' + (i + 1)"></button>
+        </div>
+        <div class="carousel-inner">
+            <div *ngFor="let project of projects; let i = index" class="carousel-item" [class.active]="i === 0">
+                <app-card [dataProject]="project"></app-card>
+            </div>
+        </div>
+        <button class="carousel-control-prev btn-carousel" type="button" data-bs-target="#carouselProjectIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next btn-carousel" type="button" data-bs-target="#carouselProjectIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>

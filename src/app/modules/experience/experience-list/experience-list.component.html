@@ -1,0 +1,42 @@
+<div id="experience-introduction" class=" py-5">
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-8 col-md-10 col-sm-12">
+            <h2 class="display-4 fw-bold mb-4">Professional Experience</h2>
+            <p class="lead text-muted mb-4">
+                In this section, you will find details about my professional experience, including the roles I have
+                held, the skills I have developed, and the contributions I have made in various fields.
+            </p>
+            <p class="text-muted">
+                Throughout my career, I have worked in diverse environments, tackling challenges that have shaped my
+                expertise. From academic projects to real-world industry experiences, each role has provided me with
+                invaluable lessons and growth opportunities.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<section>
+    <div id="carouselExperienceIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-indicators">
+            <button *ngFor="let experience of experiences; let i = index" type="button" data-bs-target="#carouselExperienceIndicators"
+                [attr.data-bs-slide-to]="i" class="btn btn-primary" [class.active]="i === 0"
+                [attr.aria-current]="i === 0 ? 'true' : null" [attr.aria-label]="'Slide ' + (i + 1)"></button>
+        </div>
+        <div class="carousel-inner">
+            <div *ngFor="let experience of experiences; let i = index" class="carousel-item" [class.active]="i === 0">
+                <app-card [dataExperience]="experience"></app-card>
+            </div>
+        </div>
+        <button class="carousel-control-prev btn-carousel" type="button" data-bs-target="#carouselExperienceIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next btn-carousel" type="button" data-bs-target="#carouselExperienceIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
