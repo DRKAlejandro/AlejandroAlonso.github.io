@@ -1,12 +1,14 @@
 {
   "name": "personal-page",
   "version": "0.0.0",
+  "homepage": "https://drkalejandro.github.io/AlejandroAlonso/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "npm run build && gh-pages -d dist/personal-page"
   },
   "private": true,
   "dependencies": {
