@@ -26,4 +26,18 @@ export class FirestoreService {
     
     return { id: docSnapshot.id, ...docSnapshot.data() } as T;
   }
+  
+  async getDocumentsByIds<T>(collectionName: string, ids: string[]): Promise<T[]> {
+    const documents: T[] = [];
+    for (const id of ids) {
+      const docRef = doc(this.firestore, collectionName, id);
+      const docSnapshot = await getDoc(docRef);
+      if (docSnapshot.exists()) {
+        documents.push({ id: docSnapshot.id, ...docSnapshot.data() } as T);
+      } else {
+        console.error(`Document with ID ${id} does not exist in collection ${collectionName}`);
+      }
+    }
+    return documents;
+  }
 }

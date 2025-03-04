@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FirestoreService } from '../../../services/firestore.service';
-import { Project } from '../../../interfaces/card.model';
+import { Project, Skill } from '../../../interfaces/card.model';
 
 @Component({
   selector: 'app-project-detail',
@@ -16,6 +16,7 @@ export class ProjectDetailComponent implements OnInit {
   project: Project | null = null;
   expandedImageIndex: number | null = null;
   isImageVisible: boolean = false;
+  skills: Skill[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -30,6 +31,9 @@ export class ProjectDetailComponent implements OnInit {
           const project = await this.firestoreService.getDocumentById<Project>('Projects', id);
           if (project) {
             this.project = project;
+            if (project.technologies) {
+              this.skills = await this.firestoreService.getDocumentsByIds<Skill>('Skills', project.technologies);
+            }
           } else {
             console.error('Project not found!');
           }

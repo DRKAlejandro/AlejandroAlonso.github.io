@@ -3,6 +3,7 @@ export interface Skill {
   name: string;
   type: string;
   image?: string;
+  color: string;
 }
 
 

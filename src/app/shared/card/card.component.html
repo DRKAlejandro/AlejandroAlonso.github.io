@@ -13,8 +13,7 @@
       <h3>{{ dataSkill?.name || dataProject?.name || dataExperience?.name }}</h3>
 
       <!-- Para Project -->
-      <p *ngIf="dataProject?.description">{{ dataProject.description }}</p>
-      <p *ngIf="dataProject?.status">Estado: {{ dataProject.status }}</p>
+      <p *ngIf="dataProject?.status">Status: {{ dataProject.status }}</p>
 
       <!-- Para Experience -->
 
@@ -24,8 +23,7 @@
       </p>
 
       <!-- Botón para Project -->
-      <a *ngIf="dataProject" [routerLink]="['/projects', dataProject.id]">Leer Más</a>
-      <a *ngIf="dataExperience" [routerLink]="['/experience', dataExperience.id]">Leer Más</a>
+      <a *ngIf="dataProject" [routerLink]="['/projects', dataProject.id]">Read more</a>
 
     </div>
   </div>
