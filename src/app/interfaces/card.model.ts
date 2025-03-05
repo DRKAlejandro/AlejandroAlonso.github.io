@@ -20,6 +20,7 @@ export interface Project {
 export interface Experience {
   id: string;
   image?: string;
+  description: string;
   name: string;
   type: string;
   startDate: Date;

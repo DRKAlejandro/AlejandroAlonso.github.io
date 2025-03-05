@@ -22,8 +22,9 @@
         {{ formatDate(dataExperience.endDate) }}
       </p>
 
-      <!-- Botón para Project -->
+      <!-- Botón para Read more -->
       <a *ngIf="dataProject" [routerLink]="['/projects', dataProject.id]">Read more</a>
+      <a *ngIf="dataExperience" [routerLink]="['/experience', dataExperience.id]">Read more</a>
 
     </div>
   </div>
