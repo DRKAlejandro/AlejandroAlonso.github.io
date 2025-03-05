@@ -1,9 +1,9 @@
 .top-bar {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 5px;
+    left: 5px;
     display: flex;
-    align-items: center;
+    align-items: left;
     color: white;
     z-index: 1100;
 }
