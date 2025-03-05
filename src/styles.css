@@ -25,6 +25,8 @@ body{
     font-family: var(--body-font);
     font-size: var(--body-font);
     color: var(--second-color);
+    height: 100%;
+    margin: 0;
 }
 
 /*Title*/
