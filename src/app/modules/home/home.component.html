@@ -14,9 +14,12 @@
                     Flutter, Laravel, and Node.js. I specialize in creating responsive, user-centric designs utilizing
                     modern tools like Tailwind CSS, Bootstrap, and Figma.</p>
                 <div class="d-flex justify-content-center gap-3 mb-3">
-                    <button class="btn btn-outline-dark px-4"><i class="icon bi bi-download p-2"></i>Download
-                        CV</button>
-                    <button class="btn btn-dark px-4"><i class="icon bi bi-envelope p-2"></i>Contact Info</button>
+                    <a class="btn btn-outline-dark px-4" href="assets/Resumé.pdf" download>
+                        <i class="icon bi bi-download p-2"></i>Download CV
+                    </a>
+                    <a class="btn btn-dark px-4" href="mailto:jesalehalo@gmail.com">
+                        <i class="icon bi bi-envelope p-2"></i>Contact Info
+                    </a>
                 </div>
             </div>
         </div>
@@ -33,8 +36,7 @@
         </div>
     </div>
 
-    <div id="carouselFrameworkIndicators" class="carousel slide" data-bs-ride="carousel"
-        data-bs-interval="2000">
+    <div id="carouselFrameworkIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-indicators">
             <button *ngFor="let skill of frameworks; let i = index" type="button"
                 data-bs-target="#carouselFrameworkIndicators" [attr.data-bs-slide-to]="i" class="btn btn-primary"
@@ -70,8 +72,7 @@
         </div>
     </div>
 
-    <div id="carouselLanguageIndicators" class="carousel slide" data-bs-ride="carousel"
-        data-bs-interval="2000">
+    <div id="carouselLanguageIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-indicators">
             <button *ngFor="let skill of languages; let i = index" type="button"
                 data-bs-target="#carouselLanguageIndicators" [attr.data-bs-slide-to]="i" class="btn btn-primary"
